@@ -1,7 +1,8 @@
 import React from 'react';
 import Navbar from '../../components/Navbar';
-import { Typography, Button } from '@material-ui/core';
+import { Typography, Button, Box } from '@material-ui/core';
 import OnOffButton from '../../components/Button';
+import GreenBlueButton from '../../components/GreenBlueButton';
 const content = (
   <>
     <Typography paragraph>
@@ -30,6 +31,9 @@ const content = (
       sollicitudin aliquam ultrices sagittis orci a.
     </Typography>
     <OnOffButton />
+    <Box mt={1}>
+      <GreenBlueButton />
+    </Box>
   </>
 );
 
