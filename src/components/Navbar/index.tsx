@@ -71,7 +71,8 @@ const useStyles = makeStyles((theme: Theme) =>
         easing: theme.transitions.easing.sharp,
         duration: theme.transitions.duration.leavingScreen
       }),
-      marginLeft: -drawerWidth
+      marginLeft: -drawerWidth,
+      height: '95vh'
     },
     contentShift: {
       transition: theme.transitions.create('margin', {
@@ -196,7 +197,19 @@ export default function PersistentDrawerLeft() {
           eleifend. Commodo viverra maecenas accumsan lacus vel facilisis. Nulla
           posuere sollicitudin aliquam ultrices sagittis orci a.
         </Typography>
-        <div style={{ marginTop: 'auto' }}>Footer</div>
+        <div
+          style={{
+            marginTop: 210,
+            padding: 24,
+            backgroundColor: 'white',
+            display: 'flex'
+          }}
+        >
+          <Typography variant="h6">Footer</Typography>
+          <Typography variant="h6" style={{ flexGrow: 1, textAlign: 'right' }}>
+            Copyrights@ xyz, 2019 INC.
+          </Typography>
+        </div>
       </main>
     </div>
   );
