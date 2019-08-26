@@ -9,7 +9,7 @@ class Footer extends React.Component<IFooterProps> {
     return (
       <div
         style={{
-          marginTop: 210,
+          marginTop: 350,
           padding: 24,
           backgroundColor: 'white',
           display: 'flex'

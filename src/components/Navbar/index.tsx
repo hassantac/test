@@ -24,6 +24,7 @@ import InboxIcon from '@material-ui/icons/MoveToInbox';
 import MailIcon from '@material-ui/icons/Mail';
 import Footer from '../Footer';
 import { IMainProps } from '../../interfaces';
+import { Link } from 'react-router-dom';
 
 const drawerWidth = 240;
 
@@ -86,11 +87,11 @@ const useStyles = makeStyles((theme: Theme) =>
   })
 );
 
-export default function PersistentDrawerLeft(props: IMainProps) {
+function PersistentDrawerLeft(props: IMainProps) {
   const classes = useStyles();
   const theme = useTheme();
   const [open, setOpen] = React.useState(false);
-  const { setPage } = props;
+  const { content } = props;
 
   function handleDrawerOpen() {
     setOpen(true);
@@ -150,7 +151,7 @@ export default function PersistentDrawerLeft(props: IMainProps) {
             'Send email',
             'Drafts'
           ].map((text, index) => (
-            <ListItem button key={text} onClick={() => setPage(index)}>
+            <ListItem button key={text} component={Link} to={`/${index}`}>
               <ListItemIcon>
                 {index % 2 === 0 ? <InboxIcon /> : <MailIcon />}
               </ListItemIcon>
@@ -165,9 +166,10 @@ export default function PersistentDrawerLeft(props: IMainProps) {
         })}
       >
         <div className={classes.drawerHeader} />
-        <Typography paragraph>{props.content()}</Typography>
+        <Typography paragraph>{content()}</Typography>
         <Footer leftText={'Footer'} rightText={'Copyrights@ xyz, 2019 INC.'} />
       </main>
     </div>
   );
 }
+export default PersistentDrawerLeft;
