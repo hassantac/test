@@ -90,6 +90,7 @@ export default function PersistentDrawerLeft(props: IMainProps) {
   const classes = useStyles();
   const theme = useTheme();
   const [open, setOpen] = React.useState(false);
+  const { setPage } = props;
 
   function handleDrawerOpen() {
     setOpen(true);
@@ -143,19 +144,13 @@ export default function PersistentDrawerLeft(props: IMainProps) {
         </div>
         <Divider />
         <List>
-          {['Inbox', 'Starred', 'Send email', 'Drafts'].map((text, index) => (
-            <ListItem button key={text}>
-              <ListItemIcon>
-                {index % 2 === 0 ? <InboxIcon /> : <MailIcon />}
-              </ListItemIcon>
-              <ListItemText primary={text} />
-            </ListItem>
-          ))}
-        </List>
-        <Divider />
-        <List>
-          {['All mail', 'Trash', 'Spam'].map((text, index) => (
-            <ListItem button key={text}>
+          {[
+            'Green/Blue Button',
+            'Box appear/disappear',
+            'Send email',
+            'Drafts'
+          ].map((text, index) => (
+            <ListItem button key={text} onClick={() => setPage(index)}>
               <ListItemIcon>
                 {index % 2 === 0 ? <InboxIcon /> : <MailIcon />}
               </ListItemIcon>
@@ -170,7 +165,7 @@ export default function PersistentDrawerLeft(props: IMainProps) {
         })}
       >
         <div className={classes.drawerHeader} />
-        <Typography paragraph>{props.content}</Typography>
+        <Typography paragraph>{props.content()}</Typography>
         <Footer leftText={'Footer'} rightText={'Copyrights@ xyz, 2019 INC.'} />
       </main>
     </div>
