@@ -148,7 +148,7 @@ function PersistentDrawerLeft(props: IMainProps) {
           {[
             'Green/Blue Button',
             'Box appear/disappear',
-            'Send email',
+            'Purchases',
             'Drafts'
           ].map((text, index) => (
             <ListItem button key={text} component={Link} to={`/${index}`}>
