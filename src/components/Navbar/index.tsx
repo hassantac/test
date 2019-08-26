@@ -22,6 +22,7 @@ import ListItemIcon from '@material-ui/core/ListItemIcon';
 import ListItemText from '@material-ui/core/ListItemText';
 import InboxIcon from '@material-ui/icons/MoveToInbox';
 import MailIcon from '@material-ui/icons/Mail';
+import Footer from '../Footer';
 
 const drawerWidth = 240;
 
@@ -197,19 +198,7 @@ export default function PersistentDrawerLeft() {
           eleifend. Commodo viverra maecenas accumsan lacus vel facilisis. Nulla
           posuere sollicitudin aliquam ultrices sagittis orci a.
         </Typography>
-        <div
-          style={{
-            marginTop: 210,
-            padding: 24,
-            backgroundColor: 'white',
-            display: 'flex'
-          }}
-        >
-          <Typography variant="h6">Footer</Typography>
-          <Typography variant="h6" style={{ flexGrow: 1, textAlign: 'right' }}>
-            Copyrights@ xyz, 2019 INC.
-          </Typography>
-        </div>
+        <Footer />
       </main>
     </div>
   );
