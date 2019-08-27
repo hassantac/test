@@ -9,3 +9,7 @@ export interface IFooterProps {
 export interface IPurchase {
   purchases: string[];
 }
+
+export interface IDataHOCState {
+  data: { ID: string; Title: string }[];
+}

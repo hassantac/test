@@ -25,6 +25,7 @@ import MailIcon from '@material-ui/icons/Mail';
 import Footer from '../Footer';
 import { IMainProps } from '../../interfaces';
 import { Link } from 'react-router-dom';
+import SidebarList from '../SidebarList';
 
 const drawerWidth = 240;
 
@@ -144,22 +145,7 @@ function PersistentDrawerLeft(props: IMainProps) {
           </IconButton>
         </div>
         <Divider />
-        <List>
-          {[
-            'Green/Blue Button',
-            'Box appear/disappear',
-            'Purchases',
-            'Form',
-            'Two Boxes'
-          ].map((text, index) => (
-            <ListItem button key={text} component={Link} to={`/${index}`}>
-              <ListItemIcon>
-                {index % 2 === 0 ? <InboxIcon /> : <MailIcon />}
-              </ListItemIcon>
-              <ListItemText primary={text} />
-            </ListItem>
-          ))}
-        </List>
+        <SidebarList />
       </Drawer>
       <main
         className={clsx(classes.content, {
