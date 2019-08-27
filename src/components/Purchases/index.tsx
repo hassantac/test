@@ -15,7 +15,7 @@ const Purchases = (props: any) => {
       <List>
         {purchases &&
           purchases.map((item: any) => (
-            <ListItem button>
+            <ListItem button key={item}>
               <ListItemIcon>
                 <Money />
               </ListItemIcon>
