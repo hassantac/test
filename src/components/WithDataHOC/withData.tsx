@@ -1,6 +1,4 @@
 import React, { Component } from 'react';
-import { data } from './data';
-import { IDataHOCState } from '../../interfaces';
 import { DataContext } from '../../App';
 
 function withData(WrappedComponent: any) {
@@ -20,7 +18,7 @@ function withData(WrappedComponent: any) {
       // const { data } = this.state;
       return (
         <DataContext.Consumer>
-          {props => <WrappedComponent data={props} />}
+          {data => <WrappedComponent data={data} />}
         </DataContext.Consumer>
       );
     }
