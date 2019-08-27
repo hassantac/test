@@ -13,3 +13,8 @@ export interface IPurchase {
 export interface IDataHOCState {
   data: { ID: string; Title: string }[];
 }
+
+export interface IDataStorageState {
+  ID: string;
+  Title: string;
+}
